@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.venadostest.module.menu.view.activities.MenuActivity"
+    >
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/icon_home"
+            android:title="@string/str_option_home"
+            android:fontFamily="sans-serif-light"
+            />
+        <item
+            android:id="@+id/nav_statistic"
+            android:icon="@drawable/icon_chart"
+            android:title="@string/str_option_chart"
+            android:fontFamily="sans-serif-light" />
+        <item
+            android:id="@+id/nav_players"
+            android:icon="@drawable/icon_players"
+            android:title="@string/str_option_players"
+            android:fontFamily="sans-serif-light"/>
+    </group>
+
+
+</menu>
