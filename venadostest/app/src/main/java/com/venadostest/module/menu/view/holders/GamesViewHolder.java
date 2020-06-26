@@ -1,6 +1,7 @@
 package com.venadostest.module.menu.view.holders;
 
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -10,24 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.venadostest.R;
 
 public class GamesViewHolder extends RecyclerView.ViewHolder {
+    private ImageButton imbCalendar;
     private  TextView tvDateGame;
 
     private ImageView imvImageLocal;
     private  TextView tvNameLocal;
 
-    private TextView tvCorner;
+    private TextView tvScore;
 
     private ImageView imageViewLogoVisitante;
     private  TextView tvNameVisitante;
 
     public GamesViewHolder(@NonNull View itemView) {
         super(itemView);
+        imbCalendar = itemView.findViewById(R.id.imb_calendar);
         tvDateGame = itemView.findViewById(R.id.tv_fecha);
 
         imvImageLocal = itemView.findViewById(R.id.imv_logo_local);
         tvNameLocal = itemView.findViewById(R.id.tv_nombre_local);
 
-        tvCorner = itemView.findViewById(R.id.tv_macador);
+        tvScore = itemView.findViewById(R.id.tv_macador);
 
         imageViewLogoVisitante = itemView.findViewById(R.id.imv_logo_visitante);
         tvNameVisitante = itemView.findViewById(R.id.tv_nombre_visitante);
@@ -58,12 +61,12 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
         this.tvNameLocal = tvNameLocal;
     }
 
-    public TextView getTvCorner() {
-        return tvCorner;
+    public TextView getTvScore() {
+        return tvScore;
     }
 
-    public void setTvCorner(TextView tvCorner) {
-        this.tvCorner = tvCorner;
+    public void setTvScore(TextView tvScore) {
+        this.tvScore = tvScore;
     }
 
     public ImageView getImageViewLogoVisitante() {
@@ -80,5 +83,13 @@ public class GamesViewHolder extends RecyclerView.ViewHolder {
 
     public void setTvNameVisitante(TextView tvNameVisitante) {
         this.tvNameVisitante = tvNameVisitante;
+    }
+
+    public ImageButton getImbCalendar() {
+        return imbCalendar;
+    }
+
+    public void setImbCalendar(ImageButton imbCalendar) {
+        this.imbCalendar = imbCalendar;
     }
 }

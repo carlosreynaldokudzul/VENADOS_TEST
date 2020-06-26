@@ -4,15 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card_view"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#388E3C">
+    android:layout_height="wrap_content"
+    android:background="@drawable/background_item_game">
 
     <View
         android:id="@+id/divider_1"
         android:layout_width="1dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:background="#ccc"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tv_macador"
         app:layout_constraintEnd_toStartOf="@+id/tv_macador"
         app:layout_constraintTop_toTopOf="@+id/tv_macador" />
@@ -23,6 +23,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="8dp"
         android:background="#ccc"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/imv_logo_local"
         app:layout_constraintEnd_toStartOf="@+id/imv_logo_local"
         app:layout_constraintTop_toTopOf="@+id/imv_logo_local" />
@@ -33,6 +34,7 @@
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:background="#ccc"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/tv_macador"
         app:layout_constraintStart_toEndOf="@+id/tv_macador"
         app:layout_constraintTop_toTopOf="@+id/tv_macador" />
@@ -40,31 +42,34 @@
 
     <TextView
         android:id="@+id/tv_macador"
-        android:layout_width="wrap_content"
+        android:layout_width="75dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="18sp"
+        android:textSize="36sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.58"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.44" />
 
     <ImageView
         android:id="@+id/imv_logo_local"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_macador"
         app:layout_constraintEnd_toStartOf="@+id/divider_1"
         app:layout_constraintTop_toTopOf="@+id/tv_macador"
+        app:srcCompat="@drawable/venados_fc_logo"
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
         android:id="@+id/imv_logo_visitante"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/tv_macador"
         app:layout_constraintStart_toEndOf="@+id/divider_3"
@@ -72,31 +77,44 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/imb_calendar"
         android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:tint="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@+id/imv_logo_local"
         app:layout_constraintEnd_toStartOf="@+id/imv_logo_local"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/imv_logo_local"
-        app:srcCompat="@drawable/ic_launcher_foreground" />
+        app:srcCompat="@drawable/icon_calendar" />
 
     <TextView
         android:id="@+id/tv_fecha"
-        android:layout_width="0dp"
+        android:layout_width="58dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imageButton4"
-        app:layout_constraintStart_toStartOf="@+id/imageButton4"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+        android:layout_marginBottom="16dp"
+        android:shadowColor="#FFFFFF"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/imb_calendar"
+        app:layout_constraintStart_toStartOf="@+id/imb_calendar"
+        app:layout_constraintTop_toBottomOf="@+id/imb_calendar" />
 
     <TextView
         android:id="@+id/tv_nombre_local"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imv_logo_local"
         app:layout_constraintStart_toStartOf="@+id/imv_logo_local"
         app:layout_constraintTop_toBottomOf="@+id/imv_logo_local" />
@@ -106,119 +124,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="14sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imv_logo_visitante"
         app:layout_constraintStart_toStartOf="@+id/imv_logo_visitante"
         app:layout_constraintTop_toBottomOf="@+id/imv_logo_visitante" />
 
-
-    <!--<androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guideline"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5"/>
-    <androidx.constraintlayout.widget.Guideline
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/guidelieVert"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5"/>
-
-    <TextView
-        android:id="@+id/stat_1"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="10"
-        android:textColor="#777"
-        android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="@+id/stat_2"
-        app:layout_constraintEnd_toStartOf="@+id/divider_1" />
-
-    <TextView
-        android:id="@+id/stat_detail_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Streak"
-        android:textColor="#777"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/stat_1"
-        app:layout_constraintStart_toStartOf="@+id/stat_1"
-        app:layout_constraintEnd_toEndOf="@+id/stat_1" />
-
-    <View
-        android:id="@+id/divider_1"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="16dp"
-        android:background="#ccc"
-        app:layout_constraintTop_toTopOf="@+id/stat_2"
-        app:layout_constraintEnd_toStartOf="@+id/stat_2"
-        app:layout_constraintBottom_toBottomOf="@+id/stat_detail_2" />
-
-    <TextView
-        android:id="@+id/stat_2"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="243"
-        android:textColor="#777"
-        android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-    <TextView
-        android:id="@+id/stat_detail_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:text="Calories Burned"
-        android:textColor="#777"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/stat_2"
-        app:layout_constraintStart_toStartOf="@+id/stat_2"
-        app:layout_constraintEnd_toEndOf="@+id/stat_2" />
-
-    <View
-        android:id="@+id/divider_2"
-        android:layout_width="1dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:background="#ccc"
-        app:layout_constraintBottom_toBottomOf="@+id/stat_detail_2"
-        app:layout_constraintStart_toEndOf="@+id/stat_2"
-        app:layout_constraintTop_toTopOf="@+id/stat_2" />
-
-    <TextView
-        android:id="@+id/stat_3"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:gravity="center"
-        android:maxLines="1"
-        android:text="3200"
-        android:textColor="#777"
-        android:textSize="22sp"
-        app:layout_constraintTop_toTopOf="@+id/stat_2"
-        app:layout_constraintStart_toEndOf="@+id/divider_2" />
-
-    <TextView
-        android:id="@+id/stat_detail_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:maxLines="1"
-        android:text="Steps"
-        android:textColor="#777"
-        android:textSize="12sp"
-        app:layout_constraintTop_toBottomOf="@+id/stat_3"
-        app:layout_constraintStart_toStartOf="@+id/stat_3"
-        app:layout_constraintEnd_toEndOf="@+id/stat_3" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

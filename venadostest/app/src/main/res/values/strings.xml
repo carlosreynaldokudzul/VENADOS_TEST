@@ -12,5 +12,9 @@
     <string name="ascenso_mx">ASCENSO MX</string>
     <string name="str_copa_mx">COPA MX</string>
 
+    <!--General-->
+    <string name="venados_fc">Venados F.C.</string>
+    <string name="str_prox">Próximamente</string>
+
 
 </resources>

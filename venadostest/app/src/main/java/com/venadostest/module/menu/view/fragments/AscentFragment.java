@@ -3,65 +3,36 @@ package com.venadostest.module.menu.view.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.venadostest.R;
+import com.google.gson.Gson;
 import com.venadostest.module.menu.models.GameModel;
-
-import java.util.ArrayList;
+import com.venadostest.module.menu.services.GamesServices;
+import com.venadostest.module.menu.view.adapters.GamesAdapter;
 import java.util.List;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link AscentFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class AscentFragment extends Fragment {
+public class AscentFragment extends Fragment implements GamesServices.GameServiceInterface{
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-    private List<GameModel> listGamesModel = new ArrayList<>();
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private  RecyclerView recyclerViewGames;
+    private final String LUEAGE_ASCENSOMX = "Ascenso MX";
 
     public AscentFragment() {
         // Required empty public constructor
-    }
-    public AscentFragment(List<GameModel> listGamesModel) {
-        this.listGamesModel = listGamesModel;
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment AscentFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static AscentFragment newInstance(String param1, String param2) {
-        AscentFragment fragment = new AscentFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+
         }
     }
 
@@ -69,6 +40,30 @@ public class AscentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ascent, container, false);
+        View viewAscent = inflater.inflate(R.layout.fragment_ascent, container, false);
+        recyclerViewGames =(RecyclerView) viewAscent.findViewById(R.id.recycler_games_ascent);
+        recyclerViewGames.setLayoutManager(new LinearLayoutManager((getContext())));
+
+        getGamesServer(getContext(), LUEAGE_ASCENSOMX, new GamesServices.CallBackAction() {
+            @Override
+            public void onSucess(List<GameModel> list) {
+                Log.d("LISTA EXITO FRAG", new Gson().toJson(list));
+                GamesAdapter adapter = new GamesAdapter(AscentFragment.this.getContext(), AscentFragment.this.getGameByMonth(list));
+                recyclerViewGames.setAdapter(adapter);
+            }
+
+            @Override
+            public void onError(Object o) {
+                Log.d("LISTA ERRROR", new Gson().toJson(o));
+            }
+
+            @Override
+            public void onEmpty() {
+                Log.d("LISTA EMPTY", "VACIA");
+            }
+        });
+
+
+        return viewAscent;
     }
 }

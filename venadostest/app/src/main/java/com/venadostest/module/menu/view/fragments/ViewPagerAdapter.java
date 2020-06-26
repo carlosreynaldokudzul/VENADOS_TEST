@@ -20,12 +20,10 @@ import java.util.List;
 public class ViewPagerAdapter extends FragmentPagerAdapter {
 
     private int tabsNumber;
-    private List<GameModel> listGamesModel = new ArrayList<>();
 
     public ViewPagerAdapter(FragmentManager fragmentManager, int behavior, int tabs, List<GameModel> listGamesModel){
         super(fragmentManager, behavior);
         this.tabsNumber = tabs;
-        this.listGamesModel = listGamesModel;
 
     }
 
@@ -34,9 +32,9 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new GamesFragment(listGamesModel);
+                return new GamesFragment();
             case 1:
-                return new AscentFragment(listGamesModel);
+                return new AscentFragment();
 
             default: return  null;
         }
@@ -46,6 +44,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         //return tabFragments.size();
         return tabsNumber;
     }
+
     /*
     @Override
     public CharSequence getPageTitle(int position) {

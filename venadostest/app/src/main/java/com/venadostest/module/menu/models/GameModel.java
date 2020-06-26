@@ -1,30 +1,26 @@
 package com.venadostest.module.menu.models;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Locale;
 
 public class GameModel implements  Comparable<GameModel>{
     private boolean local;
     private String opponent;
-    private String opponentImage;
+    private String opponent_image;
     private Date datetime;
     private String league;
     private String image;
-    private int homeScore;
-    private int awayScore;
+    private int away_score;
+    private int home_score;
 
-    public GameModel(boolean local, String opponent, String opponentImage, Date datetime, String league, String image, int homeScore, int awayScore) {
+    public GameModel(boolean local, String opponent, String opponent_image, Date datetime, String league, String image, int homeScore, int awayScore) {
         this.local = local;
         this.opponent = opponent;
-        this.opponentImage = opponentImage;
+        this.opponent_image = opponent_image;
         this.datetime = datetime;
         this.league = league;
         this.image = image;
-        this.homeScore = homeScore;
-        this.awayScore = awayScore;
+        this.away_score = awayScore;
+        this.home_score = homeScore;
     }
 
     public boolean isLocal() {
@@ -43,12 +39,12 @@ public class GameModel implements  Comparable<GameModel>{
         this.opponent = opponent;
     }
 
-    public String getOpponentImage() {
-        return opponentImage;
+    public String getOpponent_image() {
+        return opponent_image;
     }
 
-    public void setOpponentImage(String opponentImage) {
-        this.opponentImage = opponentImage;
+    public void setOpponent_image(String opponent_image) {
+        this.opponent_image = opponent_image;
     }
 
     public Date getDatetime() {
@@ -75,20 +71,20 @@ public class GameModel implements  Comparable<GameModel>{
         this.image = image;
     }
 
-    public int getHomeScore() {
-        return homeScore;
+    public int getAway_score() {
+        return away_score;
     }
 
-    public void setHomeScore(int homeScore) {
-        this.homeScore = homeScore;
+    public void setAway_score(int away_score) {
+        this.away_score = away_score;
     }
 
-    public int getAwayScore() {
-        return awayScore;
+    public int getHome_score() {
+        return home_score;
     }
 
-    public void setAwayScore(int awayScore) {
-        this.awayScore = awayScore;
+    public void setHome_score(int home_score) {
+        this.home_score = home_score;
     }
 
     @Override
