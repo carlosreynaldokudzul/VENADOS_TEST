@@ -14,7 +14,7 @@
         android:theme="@style/AppTheme">
         <activity android:name="com.venadostest.module.players.activities.PlayersActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name="com.venadostest.module.statistics.activities.StatisticsActivity"
+        <activity android:name="com.venadostest.module.statistics.view.activities.StatisticsActivity"
             android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name="com.venadostest.module.menu.view.activities.MenuActivity"

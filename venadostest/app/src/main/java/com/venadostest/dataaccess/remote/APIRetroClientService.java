@@ -3,6 +3,8 @@ package com.venadostest.dataaccess.remote;
 
 import com.venadostest.module.menu.models.GameModel;
 import com.venadostest.module.menu.models.ResponseGameModel;
+import com.venadostest.module.statistics.models.ResponseStatisticModel;
+import com.venadostest.module.statistics.models.StatisticModel;
 
 import java.util.List;
 
@@ -20,7 +22,7 @@ public interface APIRetroClientService {
     //TODO: CAMBIARLE EL TIPO DE RESPUESTA LOS ENDPOINTS
     @Headers("Accept:application/json")
     @GET("/api/statistics")
-    Call<ResponseGameModel> getStatistics();
+    Call<ResponseStatisticModel> getStatistics();
 
     @Headers("Accept:application/json")
     @GET("/api/players")

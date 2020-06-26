@@ -2,7 +2,7 @@ package com.venadostest.module.menu.models;
 
 public class ResponseGameModel {
     private boolean success;
-    private DataGameResponse data;
+    private DataGameResponseModel data;
 
     public boolean isSuccess() {
         return success;
@@ -12,11 +12,11 @@ public class ResponseGameModel {
         this.success = success;
     }
 
-    public DataGameResponse getData() {
+    public DataGameResponseModel getData() {
         return data;
     }
 
-    public void setData(DataGameResponse data) {
+    public void setData(DataGameResponseModel data) {
         this.data = data;
     }
 

@@ -18,7 +18,7 @@ import com.example.venadostest.R;
 import com.google.android.material.navigation.NavigationView;
 import com.venadostest.module.home.fragments.HomeFragment;
 import com.venadostest.module.players.activities.PlayersActivity;
-import com.venadostest.module.statistics.activities.StatisticsActivity;
+import com.venadostest.module.statistics.view.activities.StatisticsActivity;
 
 
 public class MenuActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
